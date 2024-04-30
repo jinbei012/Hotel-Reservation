@@ -1,0 +1,1142 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Design Mastery | WDM&Co</title>
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --primary-color: #2c3855;
+  --primary-color-dark: #435681;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #d2d2d2;
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+.header__container {
+  padding: 1rem 1rem 5rem 1rem;
+}
+
+.header__image__container {
+  position: relative;
+  min-height: 500px;
+  background-image: linear-gradient(
+      to right,
+      rgba(44, 56, 85, 0.9),
+      rgba(100, 125, 187, 0.1)
+    ),
+    url("assets/header.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+
+.header__content {
+  max-width: 600px;
+  padding: 5rem 2rem;
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.header__content p {
+  color: var(--extra-light);
+}
+
+.booking__container {
+  position: absolute;
+  bottom: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 6rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.booking__container form {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.booking__container .input__group {
+  width: 100%;
+  position: relative;
+}
+
+.booking__container label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.booking__container input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--text-dark);
+}
+
+.booking__container input:focus ~ label {
+  font-size: 0.8rem;
+  top: 0;
+}
+
+.booking__container .form__group p {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.booking__container .btn {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking__container .btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.popular__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.popular__card {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 10px 5px 20px rgba(199, 5, 5, 0.1);
+  background-color: rgb(39, 39, 39);
+  color: white;
+}
+
+.popular__content {
+  padding: 1rem;
+}
+
+.popular__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.popular__card__header h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(238, 238, 238);
+  text-align: center; /* Center align text */
+}
+
+
+.popular__content p {
+  color: white;
+}
+
+.client {
+  background-color: var(--extra-light);
+}
+
+.client__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.client__card {
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.client__card img {
+  max-width: 80px;
+  margin: auto;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+}
+
+.client__card p {
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.reward__container {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.reward__container p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.reward__container h4 {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  
+}
+
+.reward__btn {
+  padding: 1rem 3rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reward__btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.footer {
+  background-color: var(--extra-light);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 5rem;
+}
+
+.footer__col h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+ 
+}
+
+.footer__col p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: var(--text-dark);
+}
+
+.footer__bar {
+  position: relative;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: right;
+  overflow: hidden;
+}
+
+.footer__bar::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 28rem;
+  transform: translateY(-50%);
+  width: 20rem;
+  height: 2px;
+  background-color: var(--text-light);
+}
+
+@media (width < 900px) {
+  .booking__container form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width < 600px) {
+  .nav__links {
+    display: none;
+  }
+
+  .header__container {
+    padding-bottom: 25rem;
+  }
+
+  .booking__container {
+    flex-direction: column;
+    bottom: -25rem;
+  }
+
+  .booking__container form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer__container {
+    gap: 2rem;
+  }
+}
+.popular__content {
+  text-align: center; /* Center align content */
+}
+
+.book__button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Adjust top margin as needed */
+}
+
+.book__button:hover {
+  background-color: #45a049;
+}
+
+/* styles.css */
+.booking-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.booking-section h3 {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+.booking-section p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.booking-section h6 {
+  color: #555;
+  font-size: 18px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Optional: Add more specific styling for different headings if needed */
+.booking-section h6:first-child {
+  margin-top: 0;
+}
+
+/* Add your custom styles here */
+/* Add your custom styles here */
+#guestdetailpanel {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff; /* Change background color */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increase shadow depth */
+  padding: 30px; /* Increase padding for better spacing */
+  max-width: 90%;
+  width: 600px; /* Increase width for larger screens */
+  z-index: 1000;
+  max-height: calc(100vh - 100px); /* Ensure the panel does not overflow viewport */
+  overflow-y: auto;
+}
+
+#guestdetailpanel h2 {
+  margin-top: 0; /* Remove default margin */
+  font-size: 24px; /* Increase heading size */
+  color: #333; /* Change heading color */
+}
+
+#guestdetailpanel p {
+  margin-bottom: 20px; /* Add spacing between paragraphs */
+  line-height: 1.5; /* Improve readability */
+  color: #666; /* Adjust text color */
+}
+
+#guestdetailpanel button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+#guestdetailpanel button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.head h3 {
+  margin: 0;
+}
+
+.middle {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.guestinfo,
+.reservationinfo {
+  flex: 0 0 calc(50% - 10px);
+  margin-right: 10px;
+  margin-bottom: 10px; /* Add margin bottom to create space between rows */
+}
+
+.guestinfo h4,
+.reservationinfo h4 {
+  margin-bottom: 10px;
+}
+
+.guestinfo input[type="text"],
+.guestinfo input[type="email"],
+.reservationinfo input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-back {
+  background-color: #ccc;
+  color: #333;
+}
+
+
+.bookbtn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.bookbtn:hover {
+  background-color: #45a049;
+}
+
+#bookingForm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  z-index: 1000;
+}
+
+#bookingForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#bookingForm input[type="date"],
+#bookingForm input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#bookingForm button[type="button"] {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#bookingForm input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+#bookingForm input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
+
+.bookingFormbtn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.bookingFormbtn:hover {
+  background-color: #45a049;
+}
+
+#PaymentForm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  z-index: 1000;
+}
+
+#PaymentForm .head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#PaymentForm .head h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+#PaymentForm .middle label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+#PaymentForm input[type="text"],
+#PaymentForm input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+#PaymentForm input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#PaymentForm input[type="submit"]:hover {
+  background-color: #d10813;
+}
+
+.card-images img {
+  display: inline-block;
+  width: 40px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+button[type="backbutton"] {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 2px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="backbutton"]:hover {
+      background-color: var(--primary-color-dark);
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav__logo">Ember Glow</div>
+    <ul class="nav__links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="index2.php">Book</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <section id="home">
+    <header class="section__container header__container">
+      <div class="header__image__container">
+        <div class="header__content">
+          <h1>Where Every Stay Ignites a Warm Ember Glow</h1>
+          <p>Book Hotels, and stay packages at the lowest price.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="booking-section">
+      <h3>Effortless Booking Experience</h3>
+      <p>Discover the seamless features that make booking with us a breeze</p>
+      <h6>Easy Booking Process</h6>
+      <p>Simple and user-friendly interface for quick reservations</p>
+      <h6>Real-Time Availability</h6>
+      <p>Instantly see which rooms are available for booking</p>
+    </section>
+  </section>
+
+  <div id="bookingForm">
+  <form action="#" method="POST" onsubmit="event.preventDefault(); validateBookingAndGuestDetailForm()">
+    <div id="bookingSection">
+      <label for="checkin">Check in Date:</label><br>
+      <input type="date" id="checkin" name="checkin" required><br>
+      <label for="checkout">Check out Date:</label><br>
+      <input type="date" id="checkout" name="checkout" required><br>
+      <label for="adults">Adults 2+:</label><br>
+      <input type="number" id="adults" name="adults" min="1" required><br>
+      <label for="children">Children:</label><br>
+      <input type="number" id="children" name="children" min="0"><br>
+      <button type="button" onclick="showGuestDetailPanel()">Continue</button>
+      <button type="button" onclick="closeBookingForm()">Back</button>
+    </div>
+    <div id="guestdetailpanel">
+      <div class="head">
+        <h3>RESERVATION</h3>
+        <i class="fa-solid fa-circle-xmark" onclick="closebox()"></i>
+      </div>
+      <div class="middle" id="guestDetailInputs">
+
+      </div>
+      <div class="footer">
+        <button type="button" onclick="submitGuestDetailForm()">Submit</button>
+        <button type="button" onclick="goBack2()">Back</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div id="PaymentForm">
+  <form action="#" method="POST" class="showPaymentForm" onsubmit="event.preventDefault(); validatePaymentForm()">
+    <div class="head">
+      <h3>Secure Payment</h3>
+      <i class="fa-solid fa-circle-xmark" onclick="closebox()"></i>
+    </div>
+    <div class="middle" id="Payment">
+      <label for="cardNumber">Card Number:</label>
+      <div class="card-images">
+        <img src="assets/visa.jpg" alt="Visa">
+        <img src="assets/mastercard.png" alt="Mastercard">
+        <img src="assets/American-Express-Color.png" alt="American Express">
+        <img src="discover.png" alt="Discover">
+      </div>
+      <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 1234 1234 1234" inputmode="numeric" pattern="[0-9 ]*" required>
+      <span class="error" id="cardNumberError"></span>
+
+      <label for="expiryDate">Expiry Date (MM/YY):</label>
+      <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" inputmode="numeric" pattern="[0-9]*" required>
+      <span class="error" id="expiryDateError"></span>
+
+      <label for="cardHolderName">Cardholder Name:</label>
+      <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Full Name" required>
+      <span class="error" id="cardHolderNameError"></span>
+
+      <label for="billingAddress">Billing Address:</label>
+      <input type="text" id="billingAddress" name="billingAddress" placeholder="Address" required>
+      <span class="error" id="billingAddressError"></span>
+
+      <label for="cvc">CVC:</label>
+      <input type="text" id="cvc" name="cvc" placeholder="CVC" inputmode="numeric" pattern="[0-9]*" required>
+      <span class="error" id="cvcError"></span>
+    </div>
+    <div class="footer">
+      <button type="submit">Subscribe</button>
+      <button type="button" onclick="goBack()">Back</button>
+    </div>
+  </form>
+</div>
+
+
+
+  <section id="Book">
+    <section class="section__container popular__container">
+      <h2 class="section__header">ROOMS</h2>
+      <div class="popular__grid">
+        <div class="popular__card">
+          <img src="assets/TRANQUIL.jpg" alt="popular hotel" />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>TRANQUIL HEAVEN ROOM</h4>
+              <h4>150 PHP</h4>
+            </div>
+            <p>✔ Calming Color Palette</p>
+            <p>✔ Comfortable Seating Area</p>
+            <p>✔ Large Windows for Natural Light</p>
+            <p>✔ Modern and Relaxing Ambiance</p>
+            <p>✔ Well-appointed Bathroom</p>
+            <p>✔ Access to On-site Gym</p>
+            <p>✔ Room Service for Breakfast</p>
+
+            <button class="btn btn-primary bookbtn" id="bookingFormbtn" onclick="showBookingForm()">Book</button>
+          </div>
+        </div>
+        <div class="popular__card">
+          <img src="assets/SUNSETS.jpg" alt="popular hotel" />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>SUNSET VISTA</h4>
+              <h4>250 PHP</h4>
+            </div>
+            <p>✔ Private Fireplace</p>
+            <p>✔ Spacious Balcony with Views</p>
+            <p>✔ Luxury Bedding and Linens</p>
+            <p>✔ Separate Living Area</p>
+            <p>✔ Ensuite Bathroom with Soaking Tub</p>
+            <p>✔ Access to On-site Gym</p>
+            <p>✔ In-room Dining Service</p>
+
+            <button class="btn btn-primary bookbtn" id="bookingFormbtn" onclick="showBookingForm()">Book</button>
+          </div>
+        </div>
+        <div class="popular__card">
+          <img src="assets/BASICEMBER.jpg" alt="popular hotel" />
+          <div class="popular__content">
+            <div class="popular__card__header">
+              <h4>BASIC EMBER SUITE</h4>
+              <h4>300 PHP</h4>
+            </div>
+            <p>✔ Panoramic Views from Private Terrace</p>
+            <p>✔ Contemporary and Luxurious Design</p>
+            <p>✔ King-sized Bed with Premium Linens</p>
+            <p>✔ Spa-like Bathroom with Rainfall Shower</p>
+            <p>✔ Sunset-themed Decor</p>
+            <p>✔ Access to On-site Gym</p>
+            <p>✔ Gourmet Dining Experience</p>
+
+            <button class="btn btn-primary bookbtn" id="bookingFormbtn" onclick="showBookingForm()">Book</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="client">
+    <div class="section__container client__container">
+      <h2 class="section__header">What our client say</h2>
+      <div class="client__grid">
+        <div class="client__card">
+          <img src="assets/client-1.jpg" alt="client" />
+          <p>
+            The booking process was seamless, and the confirmation was
+            instant. I highly recommend WDM&Co for hassle-free hotel bookings.
+          </p>
+        </div>
+        <div class="client__card">
+          <img src="assets/client-2.jpg" alt="client" />
+          <p>
+            The website provided detailed information about the hotel, including
+            amenities, photos, which helped me make an informed decision.
+          </p>
+        </div>
+        <div class="client__card">
+          <img src="assets/client-3.jpg" alt="client" />
+          <p>
+            I was able to book a room within minutes, and the hotel exceeded
+            my expectations. I appreciate WDM&Co's efficiency and reliability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>WDM&Co</h3>
+          <p>
+            WDM&Co is a premier hotel booking website that offers a seamless and
+            convenient way to find and book accommodations worldwide.
+          </p>
+          <p>
+            With a user-friendly interface and a vast selection of hotels,
+            WDM&Co aims to provide a stress-free experience for travelers
+            seeking the perfect stay.
+          </p>
+        </div>
+      <div class="footer__bar">
+        Copyright © 2023 Web Design Mastery. All rights reserved.
+      </div>
+    </footer>
+  </section>
+
+<script>
+  function validateBookingForm() {
+    var bookingForm = document.getElementById("bookingForm");
+    bookingForm.style.display = "block";
+    showGuestDetailPanel();
+}
+
+function validateGuestDetailForm() {
+    var guestDetailPanel = document.getElementById('guestdetailpanel');
+    guestDetailPanel.style.display = 'block';
+    showPaymentForm();
+}
+
+function validatePaymentForm() {
+    var paymentForm = document.getElementById('PaymentForm');
+    paymentForm.style.display = 'block';
+    alert("Form submitted successfully!");
+}
+
+function showBookingForm() {
+    var bookingForm = document.getElementById("bookingForm");
+    bookingForm.style.display = "block";
+}
+
+function showGuestDetailPanel() {
+    var adults = parseInt(document.getElementById('adults').value);
+    var children = parseInt(document.getElementById('children').value);
+    var guestDetailInputs = document.getElementById('guestDetailInputs');
+    guestDetailInputs.innerHTML = ''; // Clear previous inputs
+
+    for (var i = 1; i <= adults; i++) {
+        guestDetailInputs.innerHTML += '<div class="guestinfo"><h4>Adult ' + i + '</h4>' +
+            '<input type="text" name="adultFirstName' + i + '" placeholder="First Name" required>' +
+            '<input type="text" name="adultMiddleName' + i + '" placeholder="Middle Name">' +
+            '<input type="email" name="adultEmail' + i + '" placeholder="Enter Email">' +
+            '<input type="text" name="adultLastName' + i + '" placeholder="Last Name" required>' +
+            '<input type="text" name="adultSuffix' + i + '" placeholder="Suffix">' +
+            '<input type="text" name="adultPhoneNumber' + i + '" placeholder="Phone Number"></div>';
+    }
+
+    for (var j = 1; j <= children; j++) {
+        guestDetailInputs.innerHTML += '<div class="reservationinfo"><h4>Child ' + j + '</h4>' +
+            '<input type="text" name="childFirstName' + j + '" placeholder="First Name">' +
+            '<input type="text" name="childMiddleName' + j + '" placeholder="Middle Name">' +
+            '<input type="text" name="childLastName' + j + '" placeholder="Last Name">' +
+            '<input type="text" name="childSuffix' + j + '" placeholder="Suffix"></div>';
+    }
+
+    var guestDetailPanel = document.getElementById('guestdetailpanel');
+    guestDetailPanel.style.display = 'block';
+}
+
+function submitGuestDetailForm() {
+    var guestDetailInputs = document.querySelectorAll('#guestDetailInputs input[required]');
+    var hasBlankField = false;
+
+    guestDetailInputs.forEach(function(input) {
+        if (input.value.trim() === '') {
+            hasBlankField = true;
+        }
+    });
+
+    if (hasBlankField) {
+        alert("Please fill in all required fields.");
+    } else {
+        validateGuestDetailForm();
+    }
+}
+
+function showPaymentForm() {
+    var paymentForm = document.getElementById('PaymentForm');
+    paymentForm.style.display = 'block';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    var form = document.getElementById("PaymentForm");
+
+    function validateForm() {
+        var errors = document.querySelectorAll(".error");
+        errors.forEach(function(error) {
+            error.textContent = "";
+        });
+
+        var isValid = true;
+
+        var cardNumber = document.getElementById("cardNumber").value;
+        if (!cardNumber.match(/^\d{4} \d{4} \d{4} \d{4}$/)) {
+            document.getElementById("cardNumberError").textContent = "Invalid card number";
+            isValid = false;
+        }
+
+        var expiryDate = document.getElementById("expiryDate").value;
+        if (!expiryDate.match(/^\d{2}\/\d{2}$/)) {
+            document.getElementById("expiryDateError").textContent = "Invalid expiry date";
+            isValid = false;
+        }
+
+        var cardHolderName = document.getElementById("cardHolderName").value;
+        if (cardHolderName.trim() === "") {
+            document.getElementById("cardHolderNameError").textContent = "Cardholder name is required";
+            isValid = false;
+        }
+
+        var billingAddress = document.getElementById("billingAddress").value;
+        if (billingAddress.trim() === "") {
+            document.getElementById("billingAddressError").textContent = "Billing address is required";
+            isValid = false;
+        }
+
+        var cvc = document.getElementById("cvc").value;
+        if (!cvc.match(/^\d{3}$/)) {
+            document.getElementById("cvcError").textContent = "Invalid CVC";
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        if (validateForm()) {
+            validatePaymentForm();
+            form.reset();
+        }
+    });
+});
+
+function goBack() {
+    var paymentForm = document.getElementById("PaymentForm");
+    var guestDetailPanel = document.getElementById('guestdetailpanel');
+    if (paymentForm.style.display === "block") {
+        paymentForm.style.display = "none";
+        guestDetailPanel.style.display = "block";
+    } else {
+        guestDetailPanel.style.display = "none";
+        document.getElementById("bookingForm").style.display = "none";
+    }
+}
+
+function goBack2() {
+    document.getElementById("guestdetailpanel").style.display = "none";
+    
+}
+
+function closeBookingForm() {
+    document.getElementById("bookingForm").style.display = "none";
+  }
+</script>
+</body>
+</html>
